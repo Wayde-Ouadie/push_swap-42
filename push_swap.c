@@ -6,9 +6,13 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:32:46 by oel-feng          #+#    #+#             */
-/*   Updated: 2023/12/17 18:04:29 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/01/14 15:59:10 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	main(int ac, char **av)
+{
+	puts("Here");
+}
