@@ -6,13 +6,13 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 03:18:07 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/01/26 03:54:28 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/01/26 15:37:15 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	parsing(int ac, char **av, t_stack *a)
+bool	parsing(int ac, char **av, t_stack *a)
 {
 	int		i;
 	int		j;
@@ -30,9 +30,11 @@ void	parsing(int ac, char **av, t_stack *a)
 		j = 0;
 		while (arr[j])
 		{
-			printf("%s-", arr[j]);
+			printf("%s>", arr[j]);
 			j++;
 		}
 		i++;
 	}
+    
+    return (true); 
 }
