@@ -6,9 +6,11 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 03:20:04 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/01/26 03:20:06 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/01/26 03:51:15 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../push_swap.h"
 
 static int	ft_words(const char *s, char c)
 {

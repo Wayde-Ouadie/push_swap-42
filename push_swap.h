@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:32:54 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/01/26 03:16:00 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/01/26 03:47:55 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,19 @@
 
 typedef struct s_node
 {
-	int		index;
-	int		value;
-	t_node	*next;
-}   t_node;
+	int				index;
+	int				value;
+	struct s_node	*next;
+}	t_node;
 
 typedef struct s_stack
 {
 	t_node	*top;
 	int		len;
 }	t_stack;
+
+void	parsing(int ac, char **av, t_stack *a);
+char	**ft_split(const char *s, char c);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif

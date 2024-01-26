@@ -6,11 +6,11 @@
 #    By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/26 03:24:56 by oel-feng          #+#    #+#              #
-#    Updated: 2024/01/26 03:38:39 by oel-feng         ###   ########.fr        #
+#    Updated: 2024/01/26 03:54:08 by oel-feng         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = push_swap.c utils/ft_split.c
+SRC = push_swap.c parsing.c utils/ft_split.c utils/ft_substr.c
 # BSRC = 
 OBJ = ${SRC:.c=.o}
 # BOBJ = ${BSRC:.c=.o}
@@ -23,7 +23,7 @@ FLAG = -Wall -Wextra -Werror
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-	${CC} ${FLAGS} ${OBJ} -o {NAME}
+	${CC} ${FLAGS} ${OBJ} -o ${NAME}
 
 # bonus : ${BOBJ}
 
@@ -31,7 +31,7 @@ ${NAME}: ${OBJ}
 # 	${CC} ${FLAGS} ${BOBJ} -o ${BONUS}
 
 %.o:%.c push_swap.h bonus/checker.h
-	@${CC} ${FLAG} -c $<
+	@${CC} ${FLAG} -c $< -o $@
 
 clean:
 	@${RM} ${OBJ} ${BOBJ}

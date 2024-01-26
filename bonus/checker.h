@@ -6,7 +6,15 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 03:31:38 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/01/26 03:31:39 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/01/26 03:42:30 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CHECKER_H
+# define CHECKER_H
+
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+
+#endif
