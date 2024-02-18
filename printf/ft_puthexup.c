@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_puthexup.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/17 17:32:46 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/16 22:32:08 by oel-feng         ###   ########.fr       */
+/*   Created: 2023/11/17 08:54:57 by oel-feng          #+#    #+#             */
+/*   Updated: 2023/11/18 20:38:27 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int	main(int ac, char **av)
+static void	ft_recur(unsigned long nbr, int *size)
 {
-	t_stack	a;
-	t_stack	b;
-    bool    parse;
+	char	hex;
 
-	(void)b;
-	if (ac < 2)
-		return (0);
-	parse = parsing(ac, av, &a);
-    if (parse == true)
-	    ft_printf("Correct input");
-    else
-        ft_printf("Error");
-	return (0);
+	if (nbr)
+	{
+		ft_recur(nbr / 16, size);
+		if (nbr % 16 < 10)
+			hex = nbr % 16 + 48;
+		else
+			hex = (nbr % 16) - 10 + 'A';
+		ft_putchar(hex, size);
+	}
+}
+
+void	ft_puthexup(unsigned int nbr, int *size)
+{
+	if (nbr == 0)
+		ft_putchar('0', size);
+	else
+		ft_recur(nbr, size);
 }

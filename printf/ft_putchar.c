@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/17 17:32:46 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/16 22:32:08 by oel-feng         ###   ########.fr       */
+/*   Created: 2023/11/16 23:15:29 by oel-feng          #+#    #+#             */
+/*   Updated: 2023/11/17 05:10:56 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int	main(int ac, char **av)
+void	ft_putchar(char c, int *size)
 {
-	t_stack	a;
-	t_stack	b;
-    bool    parse;
-
-	(void)b;
-	if (ac < 2)
-		return (0);
-	parse = parsing(ac, av, &a);
-    if (parse == true)
-	    ft_printf("Correct input");
-    else
-        ft_printf("Error");
-	return (0);
+	(*size)++;
+	write(1, &c, 1);
 }

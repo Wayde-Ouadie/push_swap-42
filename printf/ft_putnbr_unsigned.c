@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_unsigned.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/17 17:32:46 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/16 22:32:08 by oel-feng         ###   ########.fr       */
+/*   Created: 2023/11/17 05:22:17 by oel-feng          #+#    #+#             */
+/*   Updated: 2023/11/21 13:54:54 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int	main(int ac, char **av)
+void	ft_putnbr_unsigned(unsigned int nbr, int *size)
 {
-	t_stack	a;
-	t_stack	b;
-    bool    parse;
-
-	(void)b;
-	if (ac < 2)
-		return (0);
-	parse = parsing(ac, av, &a);
-    if (parse == true)
-	    ft_printf("Correct input");
-    else
-        ft_printf("Error");
-	return (0);
+	if (nbr > 9)
+	{
+		ft_putnbr_unsigned(nbr / 10, size);
+		ft_putchar((nbr % 10) + 48, size);
+	}
+	else
+		ft_putchar(nbr + 48, size);
 }
