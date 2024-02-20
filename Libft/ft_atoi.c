@@ -1,23 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_2d_atoi.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/26 15:18:37 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/01/26 15:41:35 by oel-feng         ###   ########.fr       */
+/*   Created: 2023/11/03 06:18:28 by oel-feng          #+#    #+#             */
+/*   Updated: 2023/11/16 01:03:33 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
-
-static int	ft_isdigit(int a)
-{
-	if (a >= 48 && a <= 57)
-		return (1);
-	return (0);
-}
+#include "libft.h"
 
 static int	ft_sign(char c)
 {
@@ -36,6 +29,8 @@ int	ft_atoi(const char *str)
 	i = 0;
 	sign = 1;
 	res = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
 	if (str[i] == 43 || str[i] == 45)
 		sign = ft_sign(str[i++]);
 	while (ft_isdigit(str[i]))
