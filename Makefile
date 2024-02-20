@@ -6,7 +6,7 @@
 #    By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/26 03:24:56 by oel-feng          #+#    #+#              #
-#    Updated: 2024/02/20 02:04:02 by oel-feng         ###   ########.fr        #
+#    Updated: 2024/02/20 02:06:33 by oel-feng         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ ${PRINTF}: ./printf/ft_printf.h
 
 ${LIBFT}: ./libft/libft.h
 	@make -C ./libft
+	@make bonus -C ./libft
 
 # bonus : ${BOBJ}
 
