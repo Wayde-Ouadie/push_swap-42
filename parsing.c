@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 03:18:07 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/20 05:36:57 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/20 05:55:57 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ bool	parsing(int ac, char **av, t_stack *a)
 	char	*str;
 
 	i = 0;
-	(void)a;
+	if (ac < 2)
+		return (false);
 	while (++i < ac)
 	{
 		str = ft_strjoin(ac, av, " ");

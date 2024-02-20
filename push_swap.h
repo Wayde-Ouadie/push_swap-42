@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:32:54 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/20 05:37:47 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/20 05:58:18 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,13 @@ void	ft_putendl_fd(char *s, int fd);
 
 //linked list
 void    lst_add_back(t_stack **stack, int n);
+int		lstsize(t_stack *lst);
 
 // parsing
 bool	parsing(int ac, char **av, t_stack *a);
 bool	parse_check(const char *str);
+
+//stack
+bool    sorted(t_stack *stack);
 void    stack_init(t_stack **a, int *tab);
 #endif
