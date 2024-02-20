@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:32:54 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/20 09:15:14 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/20 09:20:38 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,6 @@ void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
 
 //sorting
-	//sort three
-	//sort big;
+void	sort_three(t_stack **a);
+void	sort_big(t_stack **a, t_stack **b);
 #endif
