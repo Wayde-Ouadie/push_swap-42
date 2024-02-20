@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:32:54 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/20 04:49:53 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/20 05:37:47 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlen(const char *str);
 void	ft_putendl_fd(char *s, int fd);
 
-//printf
-int		ft_printf(const char *format, ...);
-void	ft_putchar(char c, int *size);
-void	ft_putstr(char *str, int *size);
-void	ft_putnbr(int nbr, int *size);
-void	ft_putnbr_unsigned(unsigned int nbr, int *size);
-void	ft_puthexlow(unsigned int nbr, int *size);
-void	ft_puthexup(unsigned int nbr, int *size);
-void	ft_putadress(unsigned long nbr, int *size);
+//linked list
+void    lst_add_back(t_stack **stack, int n);
 
 // parsing
 bool	parsing(int ac, char **av, t_stack *a);
 bool	parse_check(const char *str);
+void    stack_init(t_stack **a, int *tab);
 #endif

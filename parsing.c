@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 03:18:07 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/20 04:29:18 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/20 05:36:57 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,51 +31,48 @@ static size_t arr_len(char **arr)
 
 	while (arr[n])
 		n++;
-	return n;
+	return (n);
 }
 
-static int	*arr_conversion(char **arr1)
+static void	*arr_conversion(char **arr, t_stack *a)
 {
 	int	i;
-	int	*arr2;
+	int	*tab;
 	size_t n;
 	
-	n =  arr_len(arr1) + 1;
-	arr2 = malloc(sizeof(int) * n);
-	if (!arr2)
-		return (memoryfree(arr1, n), NULL);
+	n =  arr_len(arr) + 1;
+	tab = malloc(sizeof(int) * n);
+	if (!tab)
+		return (memoryfree(arr, n), NULL);
 	i = -1;
-	while (arr1[++i])
-		arr2[i] = ft_atoi(arr1[i]);
-	return (arr2);
+	while (arr[++i])
+		tab[i] = ft_atoi(arr[i]);
+	stack_init(&a, tab);
+	return (NULL);
 }
 
 bool	parsing(int ac, char **av, t_stack *a)
 {
 	int		i;
 	int		j;
-	char	**arr1;
-	int		*arr2;
+	char	**arr;
 	char	*str;
 
-	i = 1;
+	i = 0;
 	(void)a;
-	while (i < ac)
+	while (++i < ac)
 	{
 		str = ft_strjoin(ac, av, " ");
-		arr1 = ft_split(str, ' ');
-		if (arr1 == NULL)
+		arr = ft_split(str, ' ');
+		if (arr == NULL)
 			return (false);
-		else if (arr1[0] == NULL)
+		else if (arr[0] == NULL)
 			return (false);
 		j = -1;
-		while (arr1[++j])
-			if (!ft_atoi(arr1[j]))
+		while (arr[++j])
+			if (!ft_atoi(arr[j]))
 				return (false);
-		i++;
 	}
-	arr2 = arr_conversion(arr1);
-	if (arr2 == NULL)
-		return (false);
+	arr_conversion(arr, a);
 	return (true);
 }
