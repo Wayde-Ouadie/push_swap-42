@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 03:18:07 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/20 09:16:17 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/20 20:26:32 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static size_t	arr_len(char **arr)
 	return (n);
 }
 
-static void	*arr_conversion(char **arr, t_stack *a)
+static t_stack	*arr_conversion(char **arr, t_stack *a)
 {
 	int		i;
 	int		*tab;
@@ -49,10 +49,10 @@ static void	*arr_conversion(char **arr, t_stack *a)
 	while (arr[++i])
 		tab[i] = ft_atoi(arr[i]);
 	stack_init(&a, tab);
-	return (NULL);
+	return (a);
 }
 
-bool	parsing(int ac, char **av, t_stack *a)
+bool	parsing(int ac, char **av, t_stack **a)
 {
 	int		i;
 	int		j;
@@ -73,6 +73,6 @@ bool	parsing(int ac, char **av, t_stack *a)
 			if (!ft_atoi(arr[j]))
 				return (false);
 	}
-	arr_conversion(arr, a);
+	*a = arr_conversion(arr, *a);
 	return (true);
 }

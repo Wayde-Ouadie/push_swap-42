@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:32:54 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/20 09:20:38 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/20 20:26:20 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 typedef struct s_stack
 {
@@ -50,7 +51,7 @@ void	lst_add_back(t_stack **stack, int n);
 //stack
 bool	sorted(t_stack *stack);
 void	stack_init(t_stack **a, int *tab);
-bool	parsing(int ac, char **av, t_stack *a);
+bool	parsing(int ac, char **av, t_stack **a);
 
 // push operations
 void	pa(t_stack **a, t_stack **b);
