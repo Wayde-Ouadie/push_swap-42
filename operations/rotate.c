@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 02:41:37 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/20 08:51:42 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/20 09:13:04 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	rotate(t_stack **stack)
 {
-	t_stack *last;
+	t_stack	*last;
 
 	if (!*stack || !(*stack)->next)
 		return ;

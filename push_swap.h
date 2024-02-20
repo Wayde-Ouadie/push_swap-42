@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:32:54 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/20 09:01:29 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/20 09:15:14 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,12 @@ int		lstsize(t_stack *lst);
 t_stack	*lstlast(t_stack *list);
 t_stack	*min_stack(t_stack *stack);
 t_stack	*max_stack(t_stack *stack);
-void    lst_add_back(t_stack **stack, int n);
+void	lst_add_back(t_stack **stack, int n);
 
 //stack
-bool    sorted(t_stack *stack);
-void    stack_init(t_stack **a, int *tab);
+bool	sorted(t_stack *stack);
+void	stack_init(t_stack **a, int *tab);
 bool	parsing(int ac, char **av, t_stack *a);
-
 
 // push operations
 void	pa(t_stack **a, t_stack **b);

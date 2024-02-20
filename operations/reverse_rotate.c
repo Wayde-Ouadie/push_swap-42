@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 02:41:34 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/20 08:50:31 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/20 09:13:21 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ static void	reverse_rotate(t_stack **stack)
 
 	if (!*stack || !(*stack)->next)
 		return ;
-		last = lstlast(*stack);
-		last->prev->next = NULL;
-		last->next = *stack;
-		last->prev = NULL;
-		*stack = last;
-		last->next->prev = last;
+	last = lstlast(*stack);
+	last->prev->next = NULL;
+	last->next = *stack;
+	last->prev = NULL;
+	*stack = last;
+	last->next->prev = last;
 }
 
 void	rra(t_stack **a)

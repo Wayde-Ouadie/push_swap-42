@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 03:18:07 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/20 09:09:42 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/20 09:16:17 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,11 @@ static void	memoryfree(char **res, int a)
 	free(res);
 }
 
-static size_t arr_len(char **arr)
+static size_t	arr_len(char **arr)
 {
-	size_t n = 0;
+	size_t	n;
 
+	n = 0;
 	while (arr[n])
 		n++;
 	return (n);
@@ -36,11 +37,11 @@ static size_t arr_len(char **arr)
 
 static void	*arr_conversion(char **arr, t_stack *a)
 {
-	int	i;
-	int	*tab;
-	size_t n;
-	
-	n =  arr_len(arr) + 1;
+	int		i;
+	int		*tab;
+	size_t	n;
+
+	n = arr_len(arr) + 1;
 	tab = malloc(sizeof(int) * n);
 	if (!tab)
 		return (memoryfree(arr, n), NULL);

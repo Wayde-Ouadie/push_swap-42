@@ -6,16 +6,16 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 02:41:30 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/20 08:50:17 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/20 09:14:01 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void push(t_stack **stack1, t_stack **stack2)
+static void	push(t_stack **stack1, t_stack **stack2)
 {
-	t_stack *tmp;
-	
+	t_stack	*tmp;
+
 	if (!*stack1)
 		return ;
 	tmp = *stack1;

@@ -6,13 +6,13 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 05:19:30 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/20 09:10:37 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/20 09:14:47 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-bool    sorted(t_stack *stack)
+bool	sorted(t_stack *stack)
 {
 	while (stack->next)
 	{
@@ -23,9 +23,9 @@ bool    sorted(t_stack *stack)
 	return (true);
 }
 
-void    stack_init(t_stack **a, int *tab)
+void	stack_init(t_stack **a, int *tab)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (tab[++i])
