@@ -21,22 +21,18 @@ FLAG = -Wall -Wextra -Werror
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-	@echo "Compiling mandatory part."
 	@${LIB} ${NAME} ${OBJ}
 
 %.o:%.c libft.h
 	@${CC} ${FLAG} -c $<
 
 bonus : ${BOBJ}
-	@echo "Compiling bonus."
 	@${LIB} ${NAME} ${BOBJ}
 
 clean:
-	@echo "Removing objects files."
 	@${RM} ${OBJ} ${BOBJ}
 
 fclean: clean
-	@echo "Removing library"
 	@${RM} ${NAME} ${bonus}
 
 re: fclean all

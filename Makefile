@@ -6,12 +6,14 @@
 #    By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/26 03:24:56 by oel-feng          #+#    #+#              #
-#    Updated: 2024/02/16 22:31:19 by oel-feng         ###   ########.fr        #
+#    Updated: 2024/02/20 01:59:51 by oel-feng         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = push_swap.c parsing.c utils/ft_split.c utils/ft_substr.c
+SRC = push_swap.c parsing.c
+#  utils/ft_split.c utils/ft_substr.c
 PRINTF = ./printf/printf.a
+LIBFT = ./libft/libft.a
 # BSRC = 
 OBJ = ${SRC:.c=.o}
 # BOBJ = ${BSRC:.c=.o}
@@ -21,29 +23,33 @@ CC = cc
 RM = rm -f
 FLAG = -Wall -Wextra -Werror
 
-start:
-	@make all
-	
-${PRINTF}:
-	@make -C ./printf
-
 all: ${NAME}
 
-${NAME}: ${OBJ}
-	${CC} ${FLAGS} ${OBJ} ${PRINTF} -o ${NAME} 
+%.o:%.c push_swap.h bonus/checker.h
+	@${CC} ${FLAG} -c $< -o $@
+
+${NAME}: ${OBJ} ${PRINTF} ${LIBFT} 
+	${CC} ${FLAGS} $^ -o ${NAME}
+
+${PRINTF}: ./printf/ft_printf.h
+	@make -C ./printf
+
+${LIBFT}: ./libft/libft.h
+	@make -C ./libft
 
 # bonus : ${BOBJ}
 
 # ${BONUS} : ${BOBJ}
 # 	${CC} ${FLAGS} ${BOBJ} -o ${BONUS}
 
-%.o:%.c push_swap.h bonus/checker.h
-	@${CC} ${FLAG} -c $< -o $@
-
 clean:
+	@make clean -C ./printf
+	@make clean -C ./libft
 	@${RM} ${OBJ} ${BOBJ}
 
 fclean: clean
+	@make fclean -C ./printf
+	@make fclean -C ./libft
 	@${RM} ${NAME} ${BONUS}
 
 re: fclean all
