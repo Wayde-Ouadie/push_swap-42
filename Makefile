@@ -6,7 +6,7 @@
 #    By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/26 03:24:56 by oel-feng          #+#    #+#              #
-#    Updated: 2024/02/20 01:59:51 by oel-feng         ###   ########.fr        #
+#    Updated: 2024/02/20 02:04:02 by oel-feng         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ all: ${NAME}
 	@${CC} ${FLAG} -c $< -o $@
 
 ${NAME}: ${OBJ} ${PRINTF} ${LIBFT} 
-	${CC} ${FLAGS} $^ -o ${NAME}
+	@${CC} ${FLAGS} $^ -o ${NAME}
 
 ${PRINTF}: ./printf/ft_printf.h
 	@make -C ./printf

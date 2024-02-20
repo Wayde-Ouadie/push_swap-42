@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:32:54 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/16 22:32:13 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/20 02:01:42 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <limits.h>
 # include "printf/ft_printf.h"
+# include "libft/libft.h"
 typedef struct s_stack
 {
 	int		value;
