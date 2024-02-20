@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:33:50 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/16 22:16:40 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/20 04:39:13 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,6 @@
 # include <stdarg.h>
 # include <unistd.h>
 
-int		ft_printf(const char *format, ...);
-void	ft_putchar(char c, int *size);
-void	ft_putstr(char *str, int *size);
-void	ft_putnbr(int nbr, int *size);
-void	ft_putnbr_unsigned(unsigned int nbr, int *size);
-void	ft_puthexlow(unsigned int nbr, int *size);
-void	ft_puthexup(unsigned int nbr, int *size);
-void	ft_putadress(unsigned long nbr, int *size);
+
 
 #endif

@@ -6,11 +6,11 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:11:30 by oel-feng          #+#    #+#             */
-/*   Updated: 2023/11/16 01:05:04 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/20 04:31:39 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
 static int	ft_words(const char *s, char c)
 {
