@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 09:20:57 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/20 09:21:26 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/20 09:24:21 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	sort_big(t_stack **a, t_stack **b)
 {
+    (void)a;
+    (void)b;
     ft_putendl_fd("Here", 1);
 }

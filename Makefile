@@ -6,13 +6,15 @@
 #    By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/26 03:24:56 by oel-feng          #+#    #+#              #
-#    Updated: 2024/02/20 09:12:41 by oel-feng         ###   ########.fr        #
+#    Updated: 2024/02/20 09:27:12 by oel-feng         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = push_swap.c parsing.c stack_init.c linked_list/linked_list_utils.c \
+SRC = push_swap.c parsing.c stack.c linked_list/linked_list_utils.c \
 	operations/push.c operations/swap.c operations/rotate.c operations/reverse_rotate.c \
-	utils/ft_atoi.c utils/ft_split.c utils/ft_strjoin.c utils/ft_substr.c utils/ft_putendl_fd.c
+	operations/sort_three.c operations/sort_big.c \
+	utils/ft_atoi.c utils/ft_split.c utils/ft_strjoin.c utils/ft_substr.c utils/ft_putendl_fd.c \
+	
 OBJ = ${SRC:.c=.o}
 NAME = push_swap
 CC = cc

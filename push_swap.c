@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:32:46 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/20 09:01:54 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/20 09:22:40 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int ac, char **av)
 		if (!sorted(a))
 		{
 			if (lstsize(a) == 2)
-				swap(a);
+				sa(&a);
 			else if (lstsize(a) == 3)
 				sort_three(&a);
 			else
