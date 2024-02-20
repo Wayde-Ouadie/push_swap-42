@@ -6,26 +6,11 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 05:19:30 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/20 05:58:11 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/20 09:10:37 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	lstsize(t_stack *lst)
-{
-	int		n;
-	t_stack	*list;
-
-	n = 0;
-	list = lst;
-	while (list)
-	{
-		n++;
-		list = list->next;
-	}
-	return (n);
-}
 
 bool    sorted(t_stack *stack)
 {

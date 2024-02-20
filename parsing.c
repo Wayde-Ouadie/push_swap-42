@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 03:18:07 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/20 05:55:57 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/20 09:09:42 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,7 @@ bool	parsing(int ac, char **av, t_stack *a)
 	{
 		str = ft_strjoin(ac, av, " ");
 		arr = ft_split(str, ' ');
-		if (arr == NULL)
-			return (false);
-		else if (arr[0] == NULL)
+		if (arr == NULL || arr[0] == NULL)
 			return (false);
 		j = -1;
 		while (arr[++j])
