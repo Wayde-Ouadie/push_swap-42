@@ -6,12 +6,11 @@
 #    By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/26 03:24:56 by oel-feng          #+#    #+#              #
-#    Updated: 2024/02/20 02:06:33 by oel-feng         ###   ########.fr        #
+#    Updated: 2024/02/20 02:07:21 by oel-feng         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC = push_swap.c parsing.c
-#  utils/ft_split.c utils/ft_substr.c
 PRINTF = ./printf/printf.a
 LIBFT = ./libft/libft.a
 # BSRC = 
