@@ -6,22 +6,22 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 09:20:57 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/21 20:35:30 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/21 20:36:14 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	initialize_a(t_stack *a, t_stack *b)
+void	initialize_a(t_stack **a, t_stack **b)
 {
-	indexing(a);
-	indexing(b);
-	target_node_a(a, b);
-	cost_node_a(a, b);
-	set_best_move(a);
+	indexing(*a);
+	indexing(*b);
+	target_node_a(*a, *b);
+	cost_node_a(*a, *b);
+	set_best_move(*a);
 }
 
-void	initialize_b(t_stack *a, t_stack *b)
+void	initialize_b(t_stack **a, t_stack **b)
 {
 	indexing(a);
 	indexing(b);
