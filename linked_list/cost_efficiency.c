@@ -6,82 +6,82 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:18:31 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/21 07:28:41 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/21 08:49:08 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void    indexing(t_stack *stack)
+void	indexing(t_stack *stack)
 {
-    int i;
-    int half;
+	int	i;
+	int	half;
 
-    i = 0;
-    if (!stack)
-        return ;
-    half = lstsize(stack) / 2;
-    while (stack)
-    {
-        stack->index = i;
-        if (i <= half)
-            stack->half = true;
-        else
-            stack->half = false;
-        stack = stack->next;
-        i++;
-    }
+	i = 0;
+	if (!stack)
+		return ;
+	half = lstsize(stack) / 2;
+	while (stack)
+	{
+		stack->index = i;
+		if (i <= half)
+			stack->half = true;
+		else
+			stack->half = false;
+		stack = stack->next;
+		i++;
+	}
 }
 
-void    cost_node_a(t_stack *a, t_stack *b)
+void	cost_node_a(t_stack *a, t_stack *b)
 {
-    int size_a;
-    int size_b;
-    
-    size_a = lstsize(a);
-    size_b = lstsize(b);
-    while (a)
-    {
-        a->cost = a->index;
-        if (!(a->half))
-            a->cost = size_a - (a->index);
-        if (a->target->half)
-            a->cost += a->target->index;
-        else
-            a->cost += size_b - (a->target->index);
-        a = a->next; 
-    }
+	int	size_a;
+	int	size_b;
+
+	size_a = lstsize(a);
+	size_b = lstsize(b);
+	while (a)
+	{
+		a->cost = a->index;
+		if (!(a->half))
+			a->cost = size_a - (a->index);
+		if (a->target->half)
+			a->cost += a->target->index;
+		else
+			a->cost += size_b - (a->target->index);
+		a = a->next;
+	}
 }
 
-void    set_best_move(t_stack *a)
+void	set_best_move(t_stack *a)
 {
-    long    efficiency;
-    t_stack *most_eff;
+	long	efficiency;
+	t_stack	*most_eff;
 
-    if (!a)
-        return ;
-    efficiency = LONG_MAX;
-    while (a)
-    {
-        if (a->cost < efficiency)
-        {
-            efficiency = a->cost;
-            most_eff = a;
-        }
-        a = a->next;
-    }
-    most_eff->efficient = true;
+	if (!a)
+		return ;
+	efficiency = LONG_MAX;
+	while (a)
+	{
+		if (a->cost < efficiency)
+		{
+			efficiency = a->cost;
+			most_eff = a;
+		}
+		a = a->next;
+	}
+	most_eff->efficient = true;
 }
 
-t_stack *get_best_move(t_stack *a)
+t_stack	*get_best_move(t_stack *a)
 {
-    if (!a)
-        return (NULL);
-    while (a)
-    {
-        if (a->efficient)
-            return (a);
-        a = a->next;
-    }
-    return (NULL);
+	if (!a)
+		return (NULL);
+	while (a)
+	{
+		if (a->efficient)
+			return (a);
+		a = a->next;
+	}
+	return (NULL);
 }

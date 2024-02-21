@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:58:34 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/21 07:32:26 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/21 08:49:52 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,13 @@ t_stack	*min_stack(t_stack *stack)
 	return (tmp);
 }
 
-void    check_min(t_stack **a)
+void	check_min(t_stack **a)
 {
-    while ((*a)->value != min_stack(*a)->value)
+	while ((*a)->value != min_stack(*a)->value)
 	{
-        if (min_stack(*a)->half)
-            ra(a);
-        else
-            rra(a);	
+		if (min_stack(*a)->half)
+			ra(a);
+		else
+			rra(a);
 	}
 }

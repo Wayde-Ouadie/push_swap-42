@@ -6,58 +6,59 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:28:46 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/21 07:22:34 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/21 08:47:56 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-void    check_top(t_stack **stack, t_stack *top, char name)
+
+void	check_top(t_stack **stack, t_stack *top, char name)
 {
-    while (*stack != top)
-    {
-        if (name == 'a')
-        {
-            if (top->half)
-                ra(stack);
-            else
-                rra(stack);
-        }
-        else if (name == 'b')
-        {
-            if (top->half)
-                rb(stack);
-            else
-                rrb(stack);
-        }
-    }
+	while (*stack != top)
+	{
+		if (name == 'a')
+		{
+			if (top->half)
+				ra(stack);
+			else
+				rra(stack);
+		}
+		else if (name == 'b')
+		{
+			if (top->half)
+				rb(stack);
+			else
+				rrb(stack);
+		}
+	}
 }
 
-void    push_to_b(t_stack **a, t_stack **b)
+void	push_to_b(t_stack **a, t_stack **b)
 {
-    t_stack *most_eff;
+	t_stack	*most_eff;
 
-    most_eff = get_best_move(*a);
-    if (most_eff->half && most_eff->target->half)
-    {
-        while (*b != most_eff->target && *a != most_eff)
-            rr(a, b);
-        indexing(*a);
-        indexing(*b);
-    }
-    else if (!(most_eff->half) && !(most_eff->target->half))
-    {
-        while (*b != most_eff->target && *a != most_eff)
-            rrr(a, b);
-        indexing(*a);
-        indexing(*b);
-    }
-    check_top(a, most_eff, 'a');
-    check_top(b, most_eff->target, 'b');
-    pb(b, a);
+	most_eff = get_best_move(*a);
+	if (most_eff->half && most_eff->target->half)
+	{
+		while (*b != most_eff->target && *a != most_eff)
+			rr(a, b);
+		indexing(*a);
+		indexing(*b);
+	}
+	else if (!(most_eff->half) && !(most_eff->target->half))
+	{
+		while (*b != most_eff->target && *a != most_eff)
+			rrr(a, b);
+		indexing(*a);
+		indexing(*b);
+	}
+	check_top(a, most_eff, 'a');
+	check_top(b, most_eff->target, 'b');
+	pb(b, a);
 }
 
-void    push_to_a(t_stack **a, t_stack **b)
+void	push_to_a(t_stack **a, t_stack **b)
 {
-    check_top(a, (*b)->target, 'a');
-    pa(a, b);
+	check_top(a, (*b)->target, 'a');
+	pa(a, b);
 }

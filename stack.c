@@ -6,19 +6,20 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 05:19:30 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/21 05:44:37 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/21 08:43:04 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_arrlen(char **arr) {
-    int len;
-	
+static int	ft_arrlen(char **arr)
+{
+	int	len;
+
 	len = 0;
-    while (arr[len])
+	while (arr[len])
 		len++;
-    return len;
+	return (len);
 }
 
 bool	sorted(t_stack *stack)
@@ -40,7 +41,7 @@ void	stack_init(t_stack **a, char **arr)
 
 	i = -1;
 	j = 0;
-	tab = malloc(sizeof(long) * ft_arrlen(arr)  + 1);
+	tab = malloc(sizeof(long) * ft_arrlen(arr) + 1);
 	while (arr[++i])
 	{
 		if (!num_check(arr[i]))

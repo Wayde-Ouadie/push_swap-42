@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 06:18:28 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/21 04:19:43 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/21 08:44:20 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,15 @@ static int	ft_sign(char c)
 
 long	ft_atoi(char *str)
 {
-	int			i;
-	int			sign;
+	int		i;
+	int		sign;
 	long	res;
 
 	i = 0;
 	sign = 1;
 	res = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
-			str[i] == '\r' || str[i] == '\f' || str[i] == '\v')
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+		|| str[i] == '\r' || str[i] == '\f' || str[i] == '\v')
 		i++;
 	if (str[i] == 43 || str[i] == 45)
 		sign = ft_sign(str[i++]);
