@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:32:54 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/21 08:41:05 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/21 21:10:50 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,8 @@ void	sort_three(t_stack **a);
 void	sort_big(t_stack **a, t_stack **b);
 
 //targeters
-void	target_node_a(t_stack *a, t_stack *b);
-void	target_node_b(t_stack *a, t_stack *b);
+void	target_node_a(t_stack **a, t_stack **b);
+void	target_node_b(t_stack **a, t_stack **b);
 
 //cost efficiency
 void	cost_node_a(t_stack *a, t_stack *b);

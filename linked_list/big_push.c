@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:28:46 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/21 08:47:56 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/21 22:31:50 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	check_top(t_stack **stack, t_stack *top, char name)
 {
-	while (*stack != top)
+	while (*stack && (*stack)->target->value != top->target->value)
 	{
 		if (name == 'a')
 		{

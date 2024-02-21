@@ -6,7 +6,7 @@
 #    By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/26 03:24:56 by oel-feng          #+#    #+#              #
-#    Updated: 2024/02/21 07:00:49 by oel-feng         ###   ########.fr        #
+#    Updated: 2024/02/21 22:09:14 by oel-feng         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJ = ${SRC:.c=.o}
 NAME = push_swap
 CC = cc
 RM = rm -f
-FLAG = -Wall -Wextra -Werror
+FLAG = -Wall -Wextra -Werror -g
 
 all: ${NAME}
 
@@ -28,7 +28,7 @@ all: ${NAME}
 	@${CC} ${FLAG} -c $< -o $@
 
 ${NAME}: ${OBJ} 
-	@${CC} ${FLAGS} $^ -o ${NAME}
+	@${CC} ${FLAG} $^ -o ${NAME}
 
 clean:
 	@${RM} ${OBJ}

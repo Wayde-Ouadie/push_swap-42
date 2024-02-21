@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 02:41:30 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/21 06:52:32 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/21 21:42:21 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,17 @@ static void	push(t_stack **stack1, t_stack **stack2)
 		tmp->next->prev = tmp;
 		*stack2 = tmp;
 	}
+		tmp = tmp->next;
 }
 
 void	pa(t_stack **a, t_stack **b)
 {
-	push(a, b);
+	push(b, a);
 	ft_putendl_fd("pa", 1);
 }
 
 void	pb(t_stack **b, t_stack **a)
 {
-	push(b, a);
+	push(a, b);
 	ft_putendl_fd("pb", 1);
 }
