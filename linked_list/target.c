@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:08:02 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/21 06:17:25 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/21 07:31:49 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ void    target_node_a(t_stack *a, t_stack *b)
             }
             tmp = tmp->next;
         }
-        a->target = node;
+        if (biggest_smallest == LONG_MIN)
+            a->target = max_stack(b);
+        else
+            a->target = node;
         a = a->next; 
     }
 }
@@ -55,7 +58,10 @@ void    target_node_b(t_stack *a, t_stack *b)
             }
             tmp = tmp->next;
         }
-        b->target = node;
+        if (smallest_biggest == LONG_MAX)
+            b->target = min_stack(a);
+        else
+            b->target = node;
         b = b->next; 
     }
 }

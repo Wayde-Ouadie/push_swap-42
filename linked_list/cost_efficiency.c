@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:18:31 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/21 06:41:33 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/21 07:28:41 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void    cost_node_a(t_stack *a, t_stack *b)
 void    set_best_move(t_stack *a)
 {
     long    efficiency;
-    t_stack *most_efficient;
+    t_stack *most_eff;
 
     if (!a)
         return ;
@@ -66,22 +66,22 @@ void    set_best_move(t_stack *a)
         if (a->cost < efficiency)
         {
             efficiency = a->cost;
-            most_efficient = a;
+            most_eff = a;
         }
         a = a->next;
     }
-    most_efficient->efficient = true;
+    most_eff->efficient = true;
 }
 
 t_stack *get_best_move(t_stack *a)
 {
     if (!a)
         return (NULL);
-        while (a)
-        {
-            if (a->efficient)
-                return (a);
-            a = a->next;
-        }
-        return (NULL);
+    while (a)
+    {
+        if (a->efficient)
+            return (a);
+        a = a->next;
+    }
+    return (NULL);
 }
