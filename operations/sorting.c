@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 09:20:57 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/21 08:46:30 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/21 14:38:40 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,3 +64,4 @@ void	sort_big(t_stack **a, t_stack **b)
 	indexing(*a);
 	check_min(a);
 }
+de4
