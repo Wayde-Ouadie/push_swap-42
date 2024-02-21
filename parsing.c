@@ -6,73 +6,33 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 03:18:07 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/20 20:26:32 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/21 04:14:35 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	memoryfree(char **res, int a)
+void	error_msg()
 {
-	int	b;
-
-	b = 0;
-	while (b < a)
-	{
-		free(res[b]);
-		b++;
-	}
-	free(res);
+	ft_putendl_fd("Error", 2);
+	exit(1);
 }
 
-static size_t	arr_len(char **arr)
-{
-	size_t	n;
-
-	n = 0;
-	while (arr[n])
-		n++;
-	return (n);
-}
-
-static t_stack	*arr_conversion(char **arr, t_stack *a)
+void	parsing(int ac, char **av, t_stack **a)
 {
 	int		i;
-	int		*tab;
-	size_t	n;
-
-	n = arr_len(arr) + 1;
-	tab = malloc(sizeof(int) * n);
-	if (!tab)
-		return (memoryfree(arr, n), NULL);
-	i = -1;
-	while (arr[++i])
-		tab[i] = ft_atoi(arr[i]);
-	stack_init(&a, tab);
-	return (a);
-}
-
-bool	parsing(int ac, char **av, t_stack **a)
-{
-	int		i;
-	int		j;
 	char	**arr;
 	char	*str;
 
 	i = 0;
-	if (ac < 2)
-		return (false);
+	if (ac < 2 || (ac == 2 || !av[1][0]))
+		error_msg();
 	while (++i < ac)
 	{
 		str = ft_strjoin(ac, av, " ");
 		arr = ft_split(str, ' ');
 		if (arr == NULL || arr[0] == NULL)
-			return (false);
-		j = -1;
-		while (arr[++j])
-			if (!ft_atoi(arr[j]))
-				return (false);
+			error_msg();
+		stack_init(a, arr);
 	}
-	*a = arr_conversion(arr, *a);
-	return (true);
 }

@@ -6,13 +6,13 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 23:00:51 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/20 04:47:52 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/21 04:10:29 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen(char *str)
 {
 	int	i;
 
@@ -22,7 +22,7 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-static size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+static size_t	ft_strlcpy(char *dest, char *src, size_t size)
 {
 	size_t	i;
 
@@ -39,7 +39,7 @@ static size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	return (ft_strlen(src));
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char *s, unsigned int start, size_t len)
 {
 	char	*res;
 	size_t	sl;

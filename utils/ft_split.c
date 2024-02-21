@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:11:30 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/20 04:31:39 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/21 04:09:30 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ static char	**ft_fill(const char *s, char **res, char c)
 	return (res);
 }
 
-char	**ft_split(const char *s, char c)
+char	**ft_split(char *s, char c)
 {
 	char	**res;
 	int		words;

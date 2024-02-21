@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:32:54 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/20 20:26:20 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/21 04:18:26 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ typedef struct s_stack
 
 // utils
 int		ft_isdigit(int a);
-int		ft_atoi(const char *str);
-size_t	ft_strlen(const char *str);
+long	ft_atoi(char *str);
+size_t	ft_strlen(char *str);
+char	**ft_split(char *s, char c);
 void	ft_putendl_fd(char *s, int fd);
-char	**ft_split(const char *s, char c);
 char	*ft_strjoin(int size, char **strs, char *sep);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_substr(char *s, unsigned int start, size_t len);
 
 //linked list
 int		lstsize(t_stack *lst);
@@ -49,9 +49,12 @@ t_stack	*max_stack(t_stack *stack);
 void	lst_add_back(t_stack **stack, int n);
 
 //stack
+void	error_msg();
+bool    num_check(char *str);
 bool	sorted(t_stack *stack);
-void	stack_init(t_stack **a, int *tab);
-bool	parsing(int ac, char **av, t_stack **a);
+void	stack_init(t_stack **a, char **arr);
+bool    dup_check(int *tab, int nbr, int index);
+void	parsing(int ac, char **av, t_stack **a);
 
 // push operations
 void	pa(t_stack **a, t_stack **b);
