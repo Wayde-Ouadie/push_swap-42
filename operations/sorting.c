@@ -1,22 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_big.c                                         :+:      :+:    :+:   */
+/*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 09:20:57 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/21 06:28:35 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/21 07:01:51 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+static void	initialize_a(t_stack *a, t_stack *b)
+{
+	indexing(a);
+	indexing(b);
+	target_node_a(a, b);
+	cost_node_a(a, b);
+	set_best_move(a);
+}
+
+static void	initialize_b(t_stack *a, t_stack *b)
+{
+	indexing(a);
+	indexing(b);
+	target_node_b(a, b);
+}
+
+void	sort_three(t_stack **a)
+{
+	t_stack	*max;
+
+	max = max_stack(*a);
+	if (*a == max)
+		ra(a);
+	else if ((*a)->next == max)
+		rra(a);
+	if ((*a)->value > (*a)->next->value)
+		sa(a);
+}
+
 void	sort_big(t_stack **a, t_stack **b)
 {
 	int	lst_size;
 
-	lst_size = lstsize(a);
+	lst_size = lstsize(*a);
 	if (lst_size-- > 3 && !sorted(*a))
 		pb(b, a);
 	if (lst_size-- > 3 && !sorted(*a))
@@ -34,4 +63,5 @@ void	sort_big(t_stack **a, t_stack **b)
 		push_to_a(a,b);
 	}
 	indexing(*a);
+	check_min(a);
 }

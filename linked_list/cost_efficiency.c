@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:18:31 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/21 06:30:36 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/21 06:41:33 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,17 @@ void    set_best_move(t_stack *a)
         a = a->next;
     }
     most_efficient->efficient = true;
+}
+
+t_stack *get_best_move(t_stack *a)
+{
+    if (!a)
+        return (NULL);
+        while (a)
+        {
+            if (a->efficient)
+                return (a);
+            a = a->next;
+        }
+        return (NULL);
 }
