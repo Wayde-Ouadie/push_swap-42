@@ -6,13 +6,13 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 05:19:30 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/21 04:17:34 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/21 05:44:37 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_arrlen(char *arr) {
+static int	ft_arrlen(char **arr) {
     int len;
 	
 	len = 0;
@@ -35,23 +35,26 @@ bool	sorted(t_stack *stack)
 void	stack_init(t_stack **a, char **arr)
 {
 	int		i;
+	int		j;
 	long	*tab;
 
 	i = -1;
-	tab = malloc(sizeof(long) * ft_arrlen(*arr) + 1);
+	j = 0;
+	tab = malloc(sizeof(long) * ft_arrlen(arr)  + 1);
 	while (arr[++i])
 	{
 		if (!num_check(arr[i]))
 			error_msg();
-		printf("%s==%ld\n", arr[i], tab[i]);
 		tab[i] = ft_atoi(arr[i]);
 		if (tab[i] > INT_MAX || tab[i] < INT_MIN)
 			error_msg();
 		if (!dup_check((int *)tab, (int)tab[i], i) && i != 0)
 			error_msg();
 	}
-	i = -1;
-	while (tab[++i])
-		lst_add_back(a, (int)tab[i]);
+	while (ft_arrlen(arr) > j)
+	{
+		lst_add_back(a, (int)tab[j]);
+		j++;
+	}
 	free(tab);
 }

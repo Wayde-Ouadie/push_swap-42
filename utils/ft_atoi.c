@@ -6,13 +6,13 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 06:18:28 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/21 04:18:15 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/21 04:19:43 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_isdigit(int a)
+static int	ft_isdigit(int a)
 {
 	if (a >= 48 && a <= 57)
 		return (1);
