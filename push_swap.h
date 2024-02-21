@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:32:54 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/21 05:36:42 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/21 06:32:30 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	lst_add_back(t_stack **stack, int n);
 void	error_msg();
 bool    num_check(char *str);
 bool	sorted(t_stack *stack);
+void    indexing(t_stack *stack);
 void	stack_init(t_stack **a, char **arr);
 bool    dup_check(int *tab, int nbr, int index);
 void	parsing(int ac, char **av, t_stack **a);
@@ -77,4 +78,19 @@ void	rrr(t_stack **a, t_stack **b);
 //sorting
 void	sort_three(t_stack **a);
 void	sort_big(t_stack **a, t_stack **b);
+
+//initiliazers
+void	initialize_a(t_stack *a, t_stack *b);
+void	initialize_b(t_stack *a, t_stack *b);
+
+
+//targeters
+void    target_node_a(t_stack *a, t_stack *b);
+void    target_node_b(t_stack *a, t_stack *b);
+
+//cost efficiency
+void    cost_node_a(t_stack *a, t_stack *b);
+void    set_best_move(t_stack *a);
+
+//big push
 #endif
