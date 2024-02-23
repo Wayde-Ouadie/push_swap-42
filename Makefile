@@ -6,7 +6,7 @@
 #    By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/26 03:24:56 by oel-feng          #+#    #+#              #
-#    Updated: 2024/02/21 22:09:14 by oel-feng         ###   ########.fr        #
+#    Updated: 2024/02/22 02:26:03 by oel-feng         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ all: ${NAME}
 %.o:%.c push_swap.h
 	@${CC} ${FLAG} -c $< -o $@
 
-${NAME}: ${OBJ} 
+${NAME}: ${OBJ}
 	@${CC} ${FLAG} $^ -o ${NAME}
 
 clean:

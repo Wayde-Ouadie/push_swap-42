@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:32:54 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/21 21:10:50 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/23 03:14:12 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,20 @@
 
 # include <stdbool.h>
 # include <limits.h>
-# include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
 
 typedef struct s_stack
 {
+	bool			half;
+	int				cost;
 	int				value;
 	int				index;
-	int				cost;
-	bool			half;
-	bool			efficient;
-	struct s_stack	*target;
 	struct s_stack	*next;
 	struct s_stack	*prev;
+	struct s_stack	*target;
+	bool			efficient;
 }	t_stack;
 
 // utils
@@ -70,6 +69,8 @@ void	ss(t_stack **a, t_stack **b);
 void	ra(t_stack **a);
 void	rb(t_stack **b);
 void	rr(t_stack **a, t_stack **b);
+void	double_rr(t_stack **a, t_stack **b, t_stack *most_eff);
+void	double_rrr(t_stack **a, t_stack **b, t_stack *most_eff);
 
 // reverse rotate operations
 void	rra(t_stack **a);
@@ -85,9 +86,9 @@ void	target_node_a(t_stack **a, t_stack **b);
 void	target_node_b(t_stack **a, t_stack **b);
 
 //cost efficiency
-void	cost_node_a(t_stack *a, t_stack *b);
 void	set_best_move(t_stack *a);
 t_stack	*get_best_move(t_stack *a);
+void	cost_node_a(t_stack *a, t_stack *b);
 
 //big push
 void	push_to_b(t_stack **a, t_stack **b);

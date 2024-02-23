@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:28:46 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/21 22:31:50 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/23 00:58:03 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,9 @@ void	push_to_b(t_stack **a, t_stack **b)
 
 	most_eff = get_best_move(*a);
 	if (most_eff->half && most_eff->target->half)
-	{
-		while (*b != most_eff->target && *a != most_eff)
-			rr(a, b);
-		indexing(*a);
-		indexing(*b);
-	}
+		double_rr(a, b, most_eff);
 	else if (!(most_eff->half) && !(most_eff->target->half))
-	{
-		while (*b != most_eff->target && *a != most_eff)
-			rrr(a, b);
-		indexing(*a);
-		indexing(*b);
-	}
+		double_rrr(a, b, most_eff);
 	check_top(a, most_eff, 'a');
 	check_top(b, most_eff->target, 'b');
 	pb(b, a);
