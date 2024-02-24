@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:18:31 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/21 21:02:16 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/24 23:11:50 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	indexing(t_stack *stack)
 {
-	int	i;
-	int	half;
+	int		i;
+	int		half;
 	t_stack	*tmp;
 
 	tmp = stack;
@@ -30,7 +30,6 @@ void	indexing(t_stack *stack)
 			tmp->half = true;
 		else
 			tmp->half = false;
-		
 		tmp = tmp->next;
 		i++;
 	}

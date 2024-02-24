@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:08:02 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/21 22:24:42 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/24 23:12:40 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	target_node_a(t_stack **a, t_stack **b)
 		tmp = *b;
 		while (tmp)
 		{
-				
 			if (tmp->value < (*a)->value && tmp->value > biggest_smallest)
 			{
 				biggest_smallest = tmp->value;
