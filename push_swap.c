@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:32:46 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/24 23:11:25 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/02/26 16:30:29 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ int	main(int ac, char **av)
 		else
 			sort_big(&a, &b);
 	}
-	while (a)
-	{
-		printf("%d->", a->value);
-		a = a->next;
-	}
-	exit(0);
+	// while (a)
+	// {
+	// 	printf("%d->", a->value);
+	// 	a = a->next;
+	// }
+	exit(EXIT_SUCCESS);
 }
