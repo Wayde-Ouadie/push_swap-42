@@ -33,7 +33,7 @@ typedef struct s_stack
 
 // utils
 long	ft_atoi(char *str);
-size_t	ft_strlen(char *str);
+size_t	ft_strlen(const char *str);
 char	**ft_split(char *s, char c);
 void	ft_putendl_fd(char *s, int fd);
 char	*ft_strjoin(int size, char **strs, char *sep);
@@ -49,11 +49,11 @@ void	lst_add_back(t_stack **stack, int n);
 
 //stack
 void	error_msg(void);
-bool	num_check(char *str);
+bool	num_check(const char *str);
 bool	sorted(t_stack *stack);
 void	indexing(t_stack *stack);
 void	stack_init(t_stack **a, char **arr);
-bool	dup_check(int *tab, int nbr, int index);
+bool	dup_check(const int *tab, int nbr, int index);
 void	parsing(int ac, char **av, t_stack **a);
 
 // push operations
