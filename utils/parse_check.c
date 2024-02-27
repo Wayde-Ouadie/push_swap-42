@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-bool	num_check(char *str)
+bool	num_check(const char *str)
 {
 	int	i;
 
@@ -27,7 +27,7 @@ bool	num_check(char *str)
 	return (true);
 }
 
-bool	dup_check(int *tab, int nbr, int index)
+bool	dup_check(const int *tab, int nbr, int index)
 {
 	int	i;
 

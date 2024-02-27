@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-static char	*ft_concatenate(int size, char **strs, char *sep, char *res)
+static char	*ft_concatenate(int size, char **strs, const char *sep, char *res)
 {
 	int		a;
 	int		b;
