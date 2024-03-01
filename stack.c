@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 05:19:30 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/01 11:34:54 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:05:18 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void	stack_init(t_stack **a, char **arr)
 		if (i != 0 && !dup_check(tab, (int)tab[i], i))
 			error_msg();
 	}
-	free(arr);
 	i = ft_arrlen(arr);
 	while (j < i)
 	{
