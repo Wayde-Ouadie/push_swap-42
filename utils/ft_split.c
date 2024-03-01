@@ -6,13 +6,13 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:11:30 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/21 04:09:30 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:27:25 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	ft_words(const char *s, char c)
+int	ft_words(const char *s, char c)
 {
 	int	a;
 	int	words;
@@ -36,7 +36,7 @@ static int	ft_words(const char *s, char c)
 	return (words);
 }
 
-static void	ft_memoryfree(char **res, int a)
+void	ft_memoryfree(char **res, int a)
 {
 	int	b;
 

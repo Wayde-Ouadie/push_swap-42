@@ -6,20 +6,14 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:32:46 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/01 11:55:57 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:28:34 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	foo(void)
-{
-	system("leaks push_swap");
-}
-
 int	main(int ac, char **av)
 {
-	atexit(foo);
 	t_stack	*a;
 	t_stack	*b;
 

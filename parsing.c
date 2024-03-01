@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 03:18:07 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/01 12:06:46 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:27:09 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ void	parsing(int ac, char **av, t_stack **a)
 		error_msg();
 	stack_init(a, arr);
 	free(str);
-	free(arr);
+	ft_memoryfree(arr, ft_words(str, ' '));
 }

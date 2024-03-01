@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:32:54 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/01 11:55:26 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:27:38 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ long	ft_atoi(char *str);
 size_t	ft_strlen(const char *str);
 char	**ft_split(char *s, char c);
 void	ft_putendl_fd(char *s, int fd);
+int		ft_words(const char *s, char c);
+void	ft_memoryfree(char **res, int a);
 char	*ft_strjoin(int size, char **strs, char *sep);
 char	*ft_substr(char *s, unsigned int start, size_t len);
 
