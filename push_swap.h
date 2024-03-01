@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:32:54 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/23 03:14:12 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/01 11:35:23 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ bool	num_check(const char *str);
 bool	sorted(t_stack *stack);
 void	indexing(t_stack *stack);
 void	stack_init(t_stack **a, char **arr);
-bool	dup_check(const int *tab, int nbr, int index);
+bool	dup_check(const long *tab, int nbr, int index);
 void	parsing(int ac, char **av, t_stack **a);
 
 // push operations

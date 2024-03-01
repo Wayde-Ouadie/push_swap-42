@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 05:19:30 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/01 10:32:25 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/01 11:34:54 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,12 @@ void	stack_init(t_stack **a, char **arr)
 		tab[i] = ft_atoi(arr[i]);
 		if (tab[i] > INT_MAX || tab[i] < INT_MIN)
 			error_msg();
-		if (!dup_check((int *)tab, (int)tab[i], i) && i != 0)
+		if (i != 0 && !dup_check(tab, (int)tab[i], i))
 			error_msg();
 	}
 	free(arr);
-	while (ft_arrlen(arr) > j)
+	i = ft_arrlen(arr);
+	while (j < i)
 	{
 		lst_add_back(a, (int)tab[j]);
 		j++;

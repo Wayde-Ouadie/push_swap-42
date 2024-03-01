@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 03:14:31 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/21 08:45:08 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/01 11:42:21 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,18 @@ bool	num_check(const char *str)
 	return (true);
 }
 
-bool	dup_check(const int *tab, int nbr, int index)
+bool	dup_check(const long *tab, int nbr, int index)
 {
 	int	i;
 
-	i = -1;
+	i = 0;
 	if (!tab)
 		return (false);
-	while (++i < index)
+	while (i < index)
 	{
-		if (tab[i] == nbr)
+		if ((int)tab[i] == nbr)
 			return (false);
+		i++;
 	}
 	return (true);
 }
