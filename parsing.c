@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 03:18:07 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/22 02:58:39 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/01 10:29:39 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	parsing(int ac, char **av, t_stack **a)
 	char	**arr;
 	char	*str;
 
-	if (ac < 2 || (ac == 2 || !av[1][0]))
+	if (ac < 2 || (ac == 2 && !av[1][0]))
 		error_msg();
 	str = ft_strjoin(ac, av, " ");
 	arr = ft_split(str, ' ');

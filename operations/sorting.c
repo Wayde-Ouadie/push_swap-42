@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 09:20:57 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/23 01:05:08 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/01 10:20:30 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ static void	initialize_a(t_stack **a, t_stack **b)
 	indexing(*a);
 	indexing(*b);
 	target_node_a(a, b);
-	target_node_b(a, b);
 	cost_node_a(*a, *b);
 	set_best_move(*a);
 }
