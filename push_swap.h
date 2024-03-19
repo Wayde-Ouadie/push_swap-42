@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:32:54 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/01 12:27:38 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/01 14:22:26 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_stack
 }	t_stack;
 
 // utils
-long	ft_atoi(char *str);
+long	ft_atol(char *str);
 size_t	ft_strlen(const char *str);
 char	**ft_split(char *s, char c);
 void	ft_putendl_fd(char *s, int fd);

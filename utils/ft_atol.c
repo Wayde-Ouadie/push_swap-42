@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 06:18:28 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/21 08:44:20 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/01 14:22:15 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	ft_sign(char c)
 	return (1);
 }
 
-long	ft_atoi(char *str)
+long	ft_atol(char *str)
 {
 	int		i;
 	int		sign;

@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 05:19:30 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/01 12:05:18 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/01 14:22:21 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,19 @@ void	stack_init(t_stack **a, char **arr)
 	i = -1;
 	j = 0;
 	tab = malloc(sizeof(long) * ft_arrlen(arr) + 1);
+	if (tab == NULL)
+		error_msg();
 	while (arr[++i])
 	{
 		if (!num_check(arr[i]))
 			error_msg();
-		tab[i] = ft_atoi(arr[i]);
+		tab[i] = ft_atol(arr[i]);
 		if (tab[i] > INT_MAX || tab[i] < INT_MIN)
 			error_msg();
 		if (i != 0 && !dup_check(tab, (int)tab[i], i))
 			error_msg();
 	}
-	i = ft_arrlen(arr);
-	while (j < i)
+	while (j < ft_arrlen(arr))
 	{
 		lst_add_back(a, (int)tab[j]);
 		j++;
