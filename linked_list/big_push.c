@@ -6,13 +6,13 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:28:46 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/01 10:18:40 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/20 10:20:43 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	check_top(t_stack **stack, t_stack *top, char name)
+static void	check_top(t_stack **stack, t_stack *top, char name)
 {
 	while (*stack != top)
 	{
