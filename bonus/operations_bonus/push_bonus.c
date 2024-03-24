@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 02:41:30 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/23 09:30:19 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/24 06:06:56 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ void	push(t_stack **stack1, t_stack **stack2)
 	t_stack	*tmp;
 
 	if (!*stack1)
-		return ;
+	{
+		ft_putendl_fd("Cannot push", 2);
+		exit(EXIT_FAILURE);
+	}
 	tmp = *stack1;
 	*stack1 = (*stack1)->next;
 	if (*stack1)

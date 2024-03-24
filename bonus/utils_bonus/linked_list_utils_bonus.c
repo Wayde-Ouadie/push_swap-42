@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 05:24:34 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/23 09:51:17 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/23 23:18:22 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,20 @@ t_stack	*lstlast(t_stack *list)
 	return (list);
 }
 
+int	lstsize(t_stack *lst)
+{
+	int		n;
+	t_stack	*list;
+
+	n = 0;
+	list = lst;
+	while (list)
+	{
+		n++;
+		list = list->next;
+	}
+	return (n);
+}
 
 void	lst_add_back(t_stack **stack, int n)
 {

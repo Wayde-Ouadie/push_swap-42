@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 09:39:51 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/23 09:43:36 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/23 22:58:22 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,9 @@ static char	*updata(char *data)
 	return (free(data), tmp);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line(int fd, char **line)
 {
 	static char	*data;
-	char		*line;
 	char		*buffer;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE > INT_MAX)
@@ -69,5 +68,5 @@ char	*get_next_line(int fd)
 		return (NULL);
 	if (!*data)
 		return (free(data), data = NULL, NULL);
-	return (line = gettingline(data), data = updata(data), line);
+	return (*line = gettingline(data), data = updata(data), *line);
 }

@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 09:17:38 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/23 09:51:35 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/24 02:29:40 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ typedef struct s_stack
 }	t_stack;
 
 // utils
+void	error_msg(void);
 long	ft_atol(char *str);
+int		lstsize(t_stack *lst);
 bool	sorted(t_stack *stack);
 t_stack	*lstlast(t_stack *list);
 bool	num_check(const char *str);
@@ -53,10 +55,14 @@ void	push(t_stack **stack1, t_stack **stack2);
 
 //get_line
 char	*ft_strdup(char *s);
-char	*get_next_line(int fd);
+char	*get_next_line(int fd, char **line);
 size_t	ft_strlen(const char *str);
 char	*ft_strchr(char *str, int c);
 char	*ft_strjoin_v2(char *s1, char *s2);
 char	*ft_substr(char *s, unsigned int start, size_t len);
+
+//op_check
+void	oper_check(char **line, t_stack **a, t_stack **b);
+void	check_size_2(char *line, t_stack *a, t_stack *b);
 
 #endif

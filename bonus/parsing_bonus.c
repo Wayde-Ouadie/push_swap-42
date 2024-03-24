@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 03:18:07 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/23 09:37:47 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/24 02:37:42 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ bool	parsing(int ac, char **av, t_stack **a)
 {
 	char	**arr;
 	char	*str;
-	bool 	check;
+	bool	check;
 
 	if (ac < 2 || (ac == 2 && !av[1][0]))
 		return (false);

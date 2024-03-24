@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 02:41:34 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/23 09:52:33 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/24 06:06:43 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ void	reverse_rotate(t_stack **stack)
 	t_stack	*last;
 
 	if (!*stack || !(*stack)->next)
-		return ;
+	{
+		ft_putendl_fd("Cannot reverse rotate", 2);
+		exit(EXIT_FAILURE);
+	}
 	last = lstlast(*stack);
 	last->prev->next = NULL;
 	last->next = *stack;

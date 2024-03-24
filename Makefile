@@ -6,7 +6,7 @@
 #    By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/26 03:24:56 by oel-feng          #+#    #+#              #
-#    Updated: 2024/03/23 09:52:11 by oel-feng         ###   ########.fr        #
+#    Updated: 2024/03/24 05:56:21 by oel-feng         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC_BNS = bonus/get_line_bonus/get_line_bonus.c bonus/get_line_bonus/get_line_ut
 	bonus/operations_bonus/reverse_rotate_bonus.c bonus/operations_bonus/rotate_bonus.c bonus/operations_bonus/swap_bonus.c \
 	bonus/utils_bonus/ft_atol_bonus.c bonus/utils_bonus/ft_putendl_fd_bonus.c bonus/utils_bonus/ft_split_bonus.c \
 	bonus/utils_bonus/ft_strjoin_bonus.c bonus/utils_bonus/linked_list_utils_bonus.c bonus/utils_bonus/parse_check_bonus.c \
-	bonus/utils_bonus/stack_bonus.c bonus/checker_bonus.c bonus/parsing_bonus.c \
+	bonus/utils_bonus/stack_bonus.c bonus/checker_bonus.c bonus/parsing_bonus.c bonus/op_check_bonus.c \
 
 OBJ = ${SRC:.c=.o}
 OBJ_BNS = ${SRC_BNS:.c=.o}
@@ -28,7 +28,7 @@ NAME = push_swap
 NAME_BNS = checker
 CC = cc
 RM = rm -f
-FLAG = -Wall -Wextra -Werror
+FLAG = -Wall -Wextra -Werror -fsanitize=address -g
 
 all: ${NAME}
 
