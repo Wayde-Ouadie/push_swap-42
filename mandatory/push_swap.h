@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:32:54 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/20 10:20:50 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/26 23:12:30 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ char	*ft_substr(char *s, unsigned int start, size_t len);
 int		lstsize(t_stack *lst);
 void	check_min(t_stack **a);
 t_stack	*lstlast(t_stack *list);
+int		min_value(t_stack *stack);
+int		max_value(t_stack *stack);
 t_stack	*min_stack(t_stack *stack);
 t_stack	*max_stack(t_stack *stack);
 void	stack_freeing(t_stack **a);
@@ -83,17 +85,11 @@ void	rrr(t_stack **a, t_stack **b);
 //sorting
 void	sort_three(t_stack **a);
 void	sort_big(t_stack **a, t_stack **b);
-
-//targeters
-void	target_node_a(t_stack **a, t_stack **b);
-void	target_node_b(t_stack **a, t_stack **b);
-
-//cost efficiency
-void	set_best_move(t_stack *a);
-t_stack	*get_best_move(t_stack *a);
-void	cost_node_a(t_stack *a, t_stack *b);
-
-//big push
-void	push_to_b(t_stack **a, t_stack **b);
 void	push_to_a(t_stack **a, t_stack **b);
+
+//cost efficiency targeters
+void	set_best_move(t_stack *stack);
+t_stack	*get_best_move(t_stack *stack);
+void	cost_node_b(t_stack *a, t_stack *b);
+void	target_node_b(t_stack **a, t_stack **b);
 #endif

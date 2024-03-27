@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 09:19:11 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/24 06:09:21 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/24 06:50:00 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,14 @@ int	main(int ac, char **av)
 	if (check == false)
 		error_msg();
 	while (get_next_line(0, &line))
+	{
 		oper_check(&line, &a, &b);
-	if (lstsize(b) == 0 && !sorted(a))
-		ft_putendl_fd("KO", 1);
-	else
+		free(line);
+	}
+	if (lstsize(b) == 0 && sorted(a))
 		ft_putendl_fd("OK", 1);
+	else
+		ft_putendl_fd("KO", 1);
+	stack_freeing(&a);
+	stack_freeing(&b);
 }

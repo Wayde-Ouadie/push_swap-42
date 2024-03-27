@@ -6,26 +6,24 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 09:20:57 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/01 10:45:36 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/26 23:12:46 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	initialize_a(t_stack **a, t_stack **b)
+static void	index_stacks(t_stack **a, t_stack **b)
 {
 	indexing(*a);
 	indexing(*b);
-	target_node_a(a, b);
-	cost_node_a(*a, *b);
-	set_best_move(*a);
 }
 
 static void	initialize_b(t_stack **a, t_stack **b)
 {
-	indexing(*a);
-	indexing(*b);
+	index_stacks(a, b);
 	target_node_b(a, b);
+	cost_node_b(*a, *b);
+	set_best_move(*b);
 }
 
 void	sort_three(t_stack **a)
@@ -43,17 +41,21 @@ void	sort_three(t_stack **a)
 
 void	sort_big(t_stack **a, t_stack **b)
 {
-	int	lst_size;
+	int average;
+	int	size;
 
-	lst_size = lstsize(*a);
-	if (lst_size-- > 3 && !sorted(*a))
-		pb(b, a);
-	if (lst_size-- > 3 && !sorted(*a))
-		pb(b, a);
-	while (lst_size-- > 3 && !sorted(*a))
+	average = (min_value(*a) + max_value(*a)) / 2;
+	size = lstsize(*a);
+	while (size-- > 3 && !sorted(*a))
 	{
-		initialize_a(a, b);
-		push_to_b(a, b);
+		if ((*a)->value <= average)
+			pb(b,a);
+		else if ((*a)->value > average)
+		{
+			pb(b,a);
+			if (lstsize(*b) > 1)
+				rb(b);
+		}
 	}
 	sort_three(a);
 	while (*b)

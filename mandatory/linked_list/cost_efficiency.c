@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:18:31 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/02/24 23:11:50 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/26 23:06:38 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ void	indexing(t_stack *stack)
 	i = 0;
 	if (!tmp)
 		return ;
-	half = lstsize(tmp) / 2;
+	if (lstsize(tmp) % 2 == 0) 
+		half = lstsize(tmp) / 2;
+	else
+		half = (lstsize(tmp) / 2) + 1;
 	while (tmp)
 	{
 		tmp->index = i;
@@ -35,55 +38,55 @@ void	indexing(t_stack *stack)
 	}
 }
 
-void	cost_node_a(t_stack *a, t_stack *b)
+void	cost_node_b(t_stack *a, t_stack *b)
 {
 	int	size_a;
 	int	size_b;
 
 	size_a = lstsize(a);
 	size_b = lstsize(b);
-	while (a)
+	while (b)
 	{
-		a->cost = a->index;
-		if (!(a->half))
-			a->cost = size_a - (a->index);
-		if (a->target->half)
-			a->cost += a->target->index;
+		b->cost = b->index;
+		if (!(b->half))
+			b->cost = size_b - (b->index);
+		if (b->target->half)
+			b->cost += b->target->index;
 		else
-			a->cost += size_b - (a->target->index);
-		a = a->next;
+			b->cost += size_a - (b->target->index);
+		b = b->next;
 	}
 }
 
-void	set_best_move(t_stack *a)
+void	set_best_move(t_stack *stack)
 {
 	long	efficiency;
 	t_stack	*most_eff;
 
-	if (!a)
+	if (!stack)
 		return ;
 	efficiency = LONG_MAX;
-	while (a)
+	while (stack)
 	{
-		if (a->cost < efficiency)
+		if (stack->cost < efficiency)
 		{
-			efficiency = a->cost;
-			most_eff = a;
+			efficiency = stack->cost;
+			most_eff = stack;
 		}
-		a = a->next;
+		stack = stack->next;
 	}
 	most_eff->efficient = true;
 }
 
-t_stack	*get_best_move(t_stack *a)
+t_stack	*get_best_move(t_stack *stack)
 {
-	if (!a)
+	if (!stack)
 		return (NULL);
-	while (a)
+	while (stack)
 	{
-		if (a->efficient)
-			return (a);
-		a = a->next;
+		if (stack->efficient)
+			return (stack);
+		stack = stack->next;
 	}
 	return (NULL);
 }

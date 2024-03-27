@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:28:46 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/23 23:46:04 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/26 23:14:42 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,16 @@ static void	check_top(t_stack **stack, t_stack *top, char name)
 	}
 }
 
-void	push_to_b(t_stack **a, t_stack **b)
+void	push_to_a(t_stack **a, t_stack **b)
 {
 	t_stack	*most_eff;
 
-	most_eff = get_best_move(*a);
+	most_eff = get_best_move(*b);
 	if (most_eff->half && most_eff->target->half)
 		double_rr(a, b, most_eff);
 	else if (!(most_eff->half) && !(most_eff->target->half))
 		double_rrr(a, b, most_eff);
-	check_top(a, most_eff, 'a');
-	check_top(b, most_eff->target, 'b');
-	pb(b, a);
-}
-
-void	push_to_a(t_stack **a, t_stack **b)
-{
-	check_top(a, (*b)->target, 'a');
+	check_top(b, most_eff, 'b');
+	check_top(a, most_eff->target, 'a');
 	pa(a, b);
 }

@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 09:17:38 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/24 02:29:40 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/24 06:44:58 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ long	ft_atol(char *str);
 int		lstsize(t_stack *lst);
 bool	sorted(t_stack *stack);
 t_stack	*lstlast(t_stack *list);
+void	stack_freeing(t_stack **a);
 bool	num_check(const char *str);
 char	**ft_split(char *s, char c);
 void	ft_putendl_fd(char *s, int fd);

@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_bonus.c                                    :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 03:18:07 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/24 02:37:42 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/24 06:19:36 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker_bonus.h"
+#include "../push_swap.h"
 
-bool	parsing(int ac, char **av, t_stack **a)
+void	error_msg(void)
+{
+	ft_putendl_fd("Error", 2);
+	exit(EXIT_FAILURE);
+}
+
+void	parsing(int ac, char **av, t_stack **a)
 {
 	char	**arr;
 	char	*str;
-	bool	check;
 
 	if (ac < 2 || (ac == 2 && !av[1][0]))
-		return (false);
+		error_msg();
 	str = ft_strjoin(ac, av, " ");
 	arr = ft_split(str, ' ');
 	if (arr == NULL || arr[0] == NULL)
-		return (false);
-	check = stack_init(a, arr);
+		error_msg();
+	stack_init(a, arr);
 	ft_memoryfree(arr, ft_words(str, ' '));
 	free(str);
-	return (check);
 }

@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 02:41:37 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/20 03:09:44 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/26 23:14:32 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	rotate(t_stack **stack)
 
 void	double_rr(t_stack **a, t_stack **b, t_stack *most_eff)
 {
-	while (*b != most_eff->target && *a != most_eff)
+	while (*a != most_eff->target && *b != most_eff)
 		rr(a, b);
 	indexing(*a);
 	indexing(*b);
