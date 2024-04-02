@@ -53,8 +53,7 @@ void	sort_big(t_stack **a, t_stack **b)
 		else if ((*a)->value > average)
 		{
 			pb(b,a);
-			if (lstsize(*b) > 1)
-				rb(b);
+			rb(b);
 		}
 	}
 	sort_three(a);
