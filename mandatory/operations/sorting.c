@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 09:20:57 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/26 23:12:46 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/08/05 11:16:31 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	sort_three(t_stack **a)
 
 void	sort_big(t_stack **a, t_stack **b)
 {
-	int average;
+	int	average;
 	int	size;
 
 	average = (min_value(*a) + max_value(*a)) / 2;
@@ -49,10 +49,10 @@ void	sort_big(t_stack **a, t_stack **b)
 	while (size-- > 3 && !sorted(*a))
 	{
 		if ((*a)->value <= average)
-			pb(b,a);
+			pb(b, a);
 		else if ((*a)->value > average)
 		{
-			pb(b,a);
+			pb(b, a);
 			rb(b);
 		}
 	}

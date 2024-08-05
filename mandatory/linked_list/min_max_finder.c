@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:58:34 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/26 22:53:57 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/08/05 11:17:07 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	min_value(t_stack *stack)
 {
-	t_stack *min;
+	t_stack	*min;
 
 	min = min_stack(stack);
 	return (min->value);
@@ -23,6 +23,7 @@ int	min_value(t_stack *stack)
 int	max_value(t_stack *stack)
 {
 	t_stack	*max;
+
 	max = max_stack(stack);
 	return (max->value);
 }

@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:18:31 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/26 23:06:38 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/08/05 11:16:47 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	indexing(t_stack *stack)
 	i = 0;
 	if (!tmp)
 		return ;
-	if (lstsize(tmp) % 2 == 0) 
+	if (lstsize(tmp) % 2 == 0)
 		half = lstsize(tmp) / 2;
 	else
 		half = (lstsize(tmp) / 2) + 1;
