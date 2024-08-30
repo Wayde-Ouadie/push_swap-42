@@ -1,13 +1,7 @@
 # push_swap
 
-<p align="center">
-  <img src="https://github.com/mcombeau/mcombeau/blob/main/42_badges/push_swape.png" alt="Push_swap 42 project badge"/>
-</p>
-
 push_swap is a 42 school algorithm project where we must sort a given list of random numbers with a limited set of instructions, using the lowest possible number of actions.
 
-## Status
-Finished 05/09/2022. Grade: 100%
 
 ## Usage
 
@@ -29,15 +23,13 @@ If the arguments are valid, the program will output the most efficient list of a
 
 The program can be checked with the provided checker, like this :
 
-```shell
-ARG="3 0 9 2 -1"; ./push_swap $ARG | ./checker $ARG
+```Mac
+ARG="3 0 9 2 -1"; ./push_swap $ARG | ./checker_Mac $ARG
+```
+```Linux
+ARG="3 0 9 2 -1"; ./push_swap $ARG | ./checker_linux $ARG
 ```
 
-You can also simply ```make test3```, ```make test5```, ```make test100``` or ```make test500``` to quickly test the program with that number of values to sort.
-
-You can visualize this push_swap algorithm in action with [O-reo's push_swap visualizer](https://github.com/o-reo/push_swap_visualizer):
-
-![Push_swap visualization by mcombeau](https://github.com/mcombeau/push_swap/blob/main/subject/push_swap_visualization.gif)
 
 ## Push_Swap Rules and Grading
 
@@ -73,8 +65,3 @@ The grade depends on how efficient the program's sorting process is.
   * 3 points for less than 8500
   * 2 points for less than 10000
   * 1 point for less than 11500
-
-Validating the project requires at least 80/100.
-
----
-Made by mcombeau: mcombeau@student.42.fr | LinkedIn: [mcombeau](https://www.linkedin.com/in/mia-combeau-86653420b/) | Website: [codequoi.com](https://www.codequoi.com)
