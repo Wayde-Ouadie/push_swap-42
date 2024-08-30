@@ -22,7 +22,8 @@ The numbers provided can be positive or negative integers. There must not be any
 If the arguments are valid, the program will output the most efficient list of actions to sort the list.
 
 The program can be checked with the provided checker, like this :
-<br>
+
+
 For Mac
 ```shell
 ARG="3 0 9 2 -1"; ./push_swap $ARG | ./checker_Mac $ARG
